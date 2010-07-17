@@ -67,7 +67,7 @@ module Test
 
         def guess_suitable_icon
           icon_dir = ICON_DIR + @theme
-          stauts = @result.status
+          status = @result.status
           icon_base_names = [status]
           if @result.passed?
             icon_base_names << "success"
