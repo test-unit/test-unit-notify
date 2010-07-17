@@ -36,15 +36,15 @@ module Test
         def attach_to_mediator(mediator)
           mediator.add_listener(UI::TestRunnerMediator::STARTED,
                                 &method(:started))
-          mediator.add_listener(TestSuite::FINISHED,
-                                &method(:test_suite_finished))
+          mediator.add_listener(UI::TestRunnerMediator::STARTED,
+                                &method(:finished))
         end
 
         def started(result)
           @result = result
         end
 
-        def test_suite_finished(elapsed_time)
+        def finished(elapsed_time)
           case RUBY_PLATFORM
           when /mswin|mingw|cygwin/
             # how?
