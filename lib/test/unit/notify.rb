@@ -22,7 +22,7 @@ module Test
     end
 
     module Notify
-      VERSION = "0.0.1"
+      VERSION = "0.0.2"
 
       class Notifier
         include ERB::Util
