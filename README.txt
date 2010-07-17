@@ -18,6 +18,12 @@ Test::Unit::Notify - A test result notify extention for Test::Unit.
 
   require 'test/unit/notify'
 
+And add '--notify' to command line option.
+
+  % ruby test/test_my_class.rb --notify
+
+See screenshot/notify-on-gnome.png for example on GNOME.
+
 == LICENSE:
 
 (The Ruby License)
