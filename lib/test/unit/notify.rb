@@ -51,17 +51,21 @@ module Test
           when /darwin/
             # growl?
           else
-            notify_by_notify_send
+            notify_by_notify_send(elapsed_time)
           end
         end
 
-        def notify_by_notify_send
+        def notify_by_notify_send(elapsed_time)
           icon = guess_suitable_icon
           args = ["notify-send",
                   "--expire-time", "5000",
                   "--urgency", urgency]
           args.concat(["--icon", icon.to_s]) if icon
-          args.concat([@result.status, h(@result.summary)])
+          title = "%s [%g%%] (%gs)" % [@result.status,
+                                       @result.pass_percentage,
+                                       elapsed_time]
+          args << title
+          args << h(@result.summary)
           system(*args)
         end
 
@@ -70,7 +74,7 @@ module Test
           status = @result.status
           icon_base_names = [status]
           if @result.passed?
-            icon_base_names << "success"
+            icon_base_names << "pass"
           else
             case status
             when "failure"
