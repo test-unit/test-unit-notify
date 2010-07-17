@@ -67,13 +67,24 @@ module Test
 
         def guess_suitable_icon
           icon_dir = ICON_DIR + @theme
-          icon = icon_dir + "#{@result.status}.png"
-          if !icon.exist? and @result.passed?
-            icon = icon_dir + "success.png"
+          stauts = @result.status
+          icon_base_names = [status]
+          if @result.passed?
+            icon_base_names << "success"
+          else
+            case status
+            when "failure"
+              icon_base_names << "error"
+            when "error"
+              icon_base_names << "failure"
+            end
           end
-          icon = icon_dir + "default.png" unless icon.exist?
-          return nil unless icon.exist?
-          icon
+          icon_base_names << "default"
+          icon_base_names.each do |base_name|
+            icon = icon_dir + "#{base_name}.png"
+            return icon if icon.exist?
+          end
+          nil
         end
 
         def urgency
