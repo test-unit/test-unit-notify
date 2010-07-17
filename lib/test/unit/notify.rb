@@ -36,7 +36,7 @@ module Test
         def attach_to_mediator(mediator)
           mediator.add_listener(UI::TestRunnerMediator::STARTED,
                                 &method(:started))
-          mediator.add_listener(UI::TestRunnerMediator::STARTED,
+          mediator.add_listener(UI::TestRunnerMediator::FINISHED,
                                 &method(:finished))
         end
 
