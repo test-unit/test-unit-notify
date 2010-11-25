@@ -11,18 +11,41 @@ require 'test/unit'
 
 module Test
   module Unit
+    AutoRunner.prepare do |auto_runner|
+      Notify.enable(auto_runner) if Notify.enable?
+    end
+
     AutoRunner.setup_option do |auto_runner, options|
       options.on("--[no-]notify",
                  "Notify test result at the last.") do |use_notify|
-        auto_runner.listeners.reject! do |listener|
-          listener.is_a?(Notify::Notifier)
-        end
-        auto_runner.listeners << Notify::Notifier.new if use_notify
+        Notify.disable(auto_runner)
+        Notify.enable(auto_runner) if use_notify
       end
     end
 
     module Notify
-      VERSION = "0.0.2"
+      VERSION = "0.1.0"
+
+      class << self
+        def enable(auto_runner)
+          auto_runner.listeners << Notifier.new
+        end
+
+        def disable(auto_runner)
+          auto_runner.listeners.reject! do |listener|
+            listener.is_a?(Notify::Notifier)
+          end
+        end
+
+        @@enable = false
+        def enable=(enable)
+          @@enable = enable
+        end
+
+        def enable?
+          @@enable
+        end
+      end
 
       class Notifier
         include ERB::Util
