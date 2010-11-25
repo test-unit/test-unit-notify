@@ -25,7 +25,7 @@ Hoe.spec('test-unit-notify') do
 
   developer('Kouhei Sutou', 'kou@clear-code.com')
 
-  extra_deps << ["test-unit"]
+  extra_deps << ["test-unit", ">= 2.1.2"]
 end
 
 task :docs do
