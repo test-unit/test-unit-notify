@@ -1,3 +1,10 @@
+=== 0.1.0 / 2010-11-25
+
+* 2 major enhancements
+
+  * added Test::Unit::Notify.enable=.
+  * changed license: Ruby's -> LGPLv2 or later.
+
 === 0.0.1 / 2010-07-17
 
 * 1 major enhancement
