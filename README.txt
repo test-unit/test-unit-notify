@@ -26,9 +26,10 @@ See screenshot/notify-on-gnome.png for example on GNOME.
 
 == LICENSE:
 
-(The Ruby License)
+LGPLv2.1 or later.
 
-This software is distributed under the same terms as ruby.
+(Kouhei Sutou has a right to change the license inclidng
+contributed patches.)
 
 == AUTHORS:
 
