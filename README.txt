@@ -8,11 +8,11 @@ Test::Unit::Notify - A test result notify extention for Test::Unit.
 
 == FEATURES/PROBLEMS:
 
-* This provides all Test::Unit extensions just one require line.
+* This provides test result notification support.
 
 == INSTALL:
 
-* sudo gem install test-unit-full
+* sudo gem install test-unit-notify
 
 == USAGE:
 
