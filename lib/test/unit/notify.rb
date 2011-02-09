@@ -3,7 +3,7 @@
 # Author:: Kouhei Sutou
 # Copyright::
 #   * Copyright (c) 2010 Kouhei Sutou <kou@clear-code.com>
-# License:: Ruby license.
+# License:: LGPLv2+
 
 require 'pathname'
 require 'erb'
