@@ -28,7 +28,7 @@ See screenshot/notify-on-gnome.png for example on GNOME.
 
 LGPLv2.1 or later.
 
-(Kouhei Sutou has a right to change the license inclidng
+(Kouhei Sutou has a right to change the license including
 contributed patches.)
 
 == AUTHORS:
