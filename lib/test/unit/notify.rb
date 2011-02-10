@@ -83,15 +83,51 @@ module Test
         def run(parameters)
           expire_time = parameters[:expire_time] * 1000
           urgency = parameters[:urgency]
+          title = parameters[:title]
+          message = h(parameters[:message])
           icon = parameters[:icon]
 
-          command_line = ["notify-send",
+          command_line = [@command,
                           "--expire-time", expire_time.to_s,
                           "--urgency", urgency]
           command_line.concat(["--icon", icon]) if icon
-          command_line << parameters[:title]
-          command_line << h(parameters[:message])
+          command_line << title
+          command_line << message
           system(*command_line)
+        end
+      end
+
+      class Growlnotify < NotifyCommand
+        def initialize
+          @command = "growlnotify"
+        end
+
+        def run(parameters)
+          wait = parameters[:expire_time]
+          priority = urgency_to_piroity(parameters[:urgency])
+          title = parameters[:title]
+          message = parameters[:message]
+          image = parameters[:icon]
+
+          command_line = [@command,
+                          "--wait", wait.to_s,
+                          "--priority", priority,
+                          "--message", message]
+          command_line.concat(["--image", image]) if image
+          command_line << title
+          system(*command_line)
+        end
+
+        private
+        def urgency_to_piroity(urgency)
+          case urgency
+          when "normal"
+            "Normal"
+          when "critical"
+            "Emergency"
+          else
+            "Normal"
+          end
         end
       end
 
@@ -106,7 +142,7 @@ module Test
           end
 
           def commands
-            [NotifySend.new]
+            [NotifySend.new, Growlnotify.new]
           end
         end
 
