@@ -1,3 +1,9 @@
+=== 0.2.1 / 2011-02-10
+
+* 1 minor enhancements
+
+  * supported Ruby 1.9.
+
 === 0.2.0 / 2011-02-10
 
 * 1 major enhancements
