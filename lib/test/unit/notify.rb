@@ -17,7 +17,8 @@ module Test
 
     AutoRunner.setup_option do |auto_runner, options|
       options.on("--[no-]notify",
-                 "Notify test result at the last.") do |use_notify|
+                 "Notify test result at the last.",
+                 "(default is auto [#{Notify.enable?}])") do |use_notify|
         Notify.disable(auto_runner)
         Notify.enable(auto_runner) if use_notify
       end
@@ -37,18 +38,77 @@ module Test
           end
         end
 
-        @@enable = false
+        @@enable = nil
         def enable=(enable)
           @@enable = enable
         end
 
         def enable?
+          if @@enable.nil?
+            @@enable = Notifier.available?
+          end
           @@enable
         end
       end
 
-      class Notifier
+      class NotifyCommand
+        def available?
+          paths.any? do |path|
+            File.exist?(File.join(path, @command))
+          end
+        end
+
+        private
+        def paths
+          path_env = ENV["PATH"]
+          if path_env.nil?
+            default_paths
+          else
+            path_env.split(File::PATH_SEPARATOR)
+          end
+        end
+
+        def default_paths
+          ["/usr/local/bin", "/usr/bin", "/bin"]
+        end
+      end
+
+      class NotifySend < NotifyCommand
         include ERB::Util
+
+        def initialize
+          @command = "notify-send"
+        end
+
+        def run(parameters)
+          expire_time = parameters[:expire_time] * 1000
+          urgency = parameters[:urgency]
+          icon = parameters[:icon]
+
+          command_line = ["notify-send",
+                          "--expire-time", expire_time.to_s,
+                          "--urgency", urgency]
+          command_line.concat(["--icon", icon]) if icon
+          command_line << parameters[:title]
+          command_line << h(parameters[:message])
+          system(*command_line)
+        end
+      end
+
+      class Notifier
+        class << self
+          def available?
+            not command.nil?
+          end
+
+          def command
+            @@command ||= commands.find {|command| command.available?}
+          end
+
+          def commands
+            [NotifySend.new]
+          end
+        end
 
         base_dir = Pathname(__FILE__).dirname.parent.parent.parent.expand_path
         ICON_DIR = base_dir + "data" + "icons"
@@ -68,30 +128,23 @@ module Test
         end
 
         def finished(elapsed_time)
-          case RUBY_PLATFORM
-          when /mswin|mingw|cygwin/
-            # how?
-          when /darwin/
-            # growl?
-          else
-            notify_by_notify_send(elapsed_time)
-          end
-        end
+          command = self.class.command
+          return if command.nil?
 
-        def notify_by_notify_send(elapsed_time)
-          icon = guess_suitable_icon
-          args = ["notify-send",
-                  "--expire-time", "5000",
-                  "--urgency", urgency]
-          args.concat(["--icon", icon.to_s]) if icon
           title = "%s [%g%%] (%gs)" % [@result.status,
                                        @result.pass_percentage,
                                        elapsed_time]
-          args << title
-          args << h(@result.summary)
-          system(*args)
+          parameters = {
+            :expire_time => 5,
+            :icon => guess_suitable_icon,
+            :urgency => urgency,
+            :title => title,
+            :message => @result.summary,
+          }
+          command.run(parameters)
         end
 
+        private
         def guess_suitable_icon
           icon_dir = ICON_DIR + @theme
           status = @result.status
