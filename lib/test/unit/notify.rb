@@ -103,14 +103,13 @@ module Test
         end
 
         def run(parameters)
-          wait = parameters[:expire_time]
+          expire_time = parameters[:expire_time]
           priority = urgency_to_piroity(parameters[:urgency])
           title = parameters[:title]
           message = parameters[:message]
           image = parameters[:icon]
 
           command_line = [@command,
-                          "--wait", wait.to_s,
                           "--priority", priority,
                           "--message", message]
           command_line.concat(["--image", image]) if image
