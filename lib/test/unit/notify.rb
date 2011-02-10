@@ -90,7 +90,7 @@ module Test
           command_line = [@command,
                           "--expire-time", expire_time.to_s,
                           "--urgency", urgency]
-          command_line.concat(["--icon", icon]) if icon
+          command_line.concat(["--icon", icon.to_s]) if icon
           command_line << title
           command_line << message
           system(*command_line)
@@ -112,7 +112,7 @@ module Test
           command_line = [@command,
                           "--priority", priority,
                           "--message", message]
-          command_line.concat(["--image", image]) if image
+          command_line.concat(["--image", image.to_s]) if image
           command_line << title
           system(*command_line)
         end
