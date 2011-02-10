@@ -9,3 +9,4 @@ data/icons/kinotan/pass.png
 data/icons/kinotan/pending.png
 lib/test/unit/notify.rb
 screenshot/notify-on-gnome.png
+screenshot/notify-on-mac-os-x.png
