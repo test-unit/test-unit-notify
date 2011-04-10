@@ -4,7 +4,7 @@
 
 == DESCRIPTION:
 
-Test::Unit::Notify - A test result notify extention for Test::Unit.
+Test::Unit::Notify - A test result notify extension for Test::Unit.
 
 == FEATURES/PROBLEMS:
 
