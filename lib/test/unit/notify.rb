@@ -192,6 +192,8 @@ module Test
               icon_base_names << "error"
             when "error"
               icon_base_names << "failure"
+            when "omission"
+              icon_base_names << "omission"
             end
           end
           icon_base_names << "default"
