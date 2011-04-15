@@ -1,3 +1,10 @@
+=== 0.3.0 / 2011-04-15
+
+* 2 minor enhancements
+
+  * added kinotan for omission. [Mayu & Co.]
+  * added kinotan for error. [Mayu & Co.]
+
 === 0.2.1 / 2011-02-10
 
 * 1 minor enhancements
