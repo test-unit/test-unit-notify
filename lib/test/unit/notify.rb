@@ -25,7 +25,7 @@ module Test
     end
 
     module Notify
-      VERSION = "0.3.0"
+      VERSION = "0.4.0"
 
       class << self
         def enable(auto_runner)
