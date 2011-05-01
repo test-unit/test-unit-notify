@@ -44,9 +44,7 @@ module Test
         end
 
         def enable?
-          if @@enable.nil?
-            @@enable = Notifier.available?
-          end
+          @@enable = Notifier.available? if @@enable.nil?
           @@enable
         end
       end
