@@ -9,46 +9,63 @@ require 'pathname'
 require 'erb'
 require 'test/unit'
 
-module Test
-  module Unit
+module Test # :nodoc:
+  module Unit # :nodoc:
     AutoRunner.prepare do |auto_runner|
-      Notify.enable(auto_runner) if Notify.enable?
+      Notify.setup_auto_runner(auto_runner)
     end
 
     AutoRunner.setup_option do |auto_runner, options|
       options.on("--[no-]notify",
                  "Notify test result at the last.",
-                 "(default is auto [#{Notify.enable?}])") do |use_notify|
-        Notify.disable(auto_runner)
-        Notify.enable(auto_runner) if use_notify
+                 "(default is auto [#{Notify.enabled?}])") do |use_notify|
+        Notify.setup_auto_runner(auto_runner, use_notify)
       end
     end
 
     module Notify
+      # test-unit-notify version number formatted as
+      # "#{MAJOR}.#{MINOR}.#{MICRO}".
       VERSION = "0.4.0"
 
       class << self
-        def enable(auto_runner)
-          auto_runner.listeners << Notifier.new
-        end
-
-        def disable(auto_runner)
-          auto_runner.listeners.reject! do |listener|
-            listener.is_a?(Notify::Notifier)
-          end
-        end
-
         @@enable = nil
-        def enable=(enable)
-          @@enable = enable
+
+        # Enables test result notification by default. It
+        # can be disabled by --no-notify command line
+        # option.
+        def enable
+          @@enable = true
         end
 
-        def enable?
+        # Disables test result notification by default. It
+        # can be disabled by --notify command line option.
+        def disable
+          @@enable = false
+        end
+
+        # Deprecated. Use Notify.enable or Notify.disable instead.
+        def enable=(enable)
+          self.default = enable
+        end
+
+        # Returns whether test result notification is
+        # enabled or not.
+        def enabled?
           @@enable = Notifier.available? if @@enable.nil?
           @@enable
         end
+
+        def setup_auto_runner(auto_runner, enable=nil) # :nodoc:
+          auto_runner.listeners.reject! do |listener|
+            listener.is_a?(Notify::Notifier)
+          end
+          enable = enabled? if enable.nil?
+          auto_runner.listeners << Notifier.new if enable
+        end
       end
 
+      # :stopdoc:
       class NotifyCommand
         def available?
           paths.any? do |path|
@@ -128,12 +145,16 @@ module Test
         end
       end
 
+      # :startdoc:
       class Notifier
         class << self
+          # Returns +true+ if test result notification is
+          # available.
           def available?
             not command.nil?
           end
 
+          # :stopdoc:
           def command
             @@command ||= commands.find {|command| command.available?}
           end
