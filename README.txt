@@ -1,6 +1,6 @@
 = Test::Unit::Notify
 
-* http://rubyforge.org/projects/test-unit/
+http://rubyforge.org/projects/test-unit/
 
 == DESCRIPTION:
 
@@ -12,7 +12,7 @@ test-unit-notify - A test result notify extension for Test::Unit.
 
 == INSTALL:
 
-* sudo gem install test-unit-notify
+  % sudo gem install test-unit-notify
 
 == USAGE:
 
