@@ -18,7 +18,7 @@ test-unit-notify - A test result notify extension for Test::Unit.
 
   require 'test/unit/notify'
 
-And add '--notify' to command line option.
+It adds '--notify' to command line option.
 
   % ruby test/test_my_class.rb --notify
 
