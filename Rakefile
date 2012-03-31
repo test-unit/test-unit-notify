@@ -15,8 +15,6 @@ require 'test/unit/notify'
 require 'rubygems'
 require 'hoe'
 
-Test::Unit.run = true
-
 version = Test::Unit::Notify::VERSION
 ENV["VERSION"] = version
 Hoe.spec('test-unit-notify') do
