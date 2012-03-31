@@ -7,7 +7,7 @@
 
 require 'pathname'
 require 'erb'
-require 'test/unit'
+require 'test/unit/autorunner'
 
 module Test # :nodoc:
   module Unit # :nodoc:
