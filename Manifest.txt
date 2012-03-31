@@ -9,6 +9,7 @@ data/icons/kinotan/failure.png
 data/icons/kinotan/omission.png
 data/icons/kinotan/pass.png
 data/icons/kinotan/pending.png
+lib/test-unit-notify.rb
 lib/test/unit/notify.rb
 screenshot/notify-on-gnome.png
 screenshot/notify-on-mac-os-x.png
