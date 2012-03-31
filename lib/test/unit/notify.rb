@@ -26,7 +26,7 @@ module Test # :nodoc:
     module Notify
       # test-unit-notify version number formatted as
       # "#{MAJOR}.#{MINOR}.#{MICRO}".
-      VERSION = "0.4.0"
+      VERSION = "1.0.0"
 
       class << self
         @@enable = nil
