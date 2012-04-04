@@ -103,6 +103,7 @@ module Test # :nodoc:
           icon = parameters[:icon]
 
           command_line = [@command,
+                          "--app-name", title,
                           "--expire-time", expire_time.to_s,
                           "--urgency", urgency]
           command_line.concat(["--icon", icon.to_s]) if icon
