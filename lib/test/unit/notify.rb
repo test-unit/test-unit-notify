@@ -1,4 +1,4 @@
-# Copyright (C) 2010-2012  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2010-2013  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -127,7 +127,6 @@ module Test # :nodoc:
         end
 
         def run(parameters)
-          expire_time = parameters[:expire_time]
           priority = urgency_to_piroity(parameters[:urgency])
           title = parameters[:title]
           message = parameters[:message]
