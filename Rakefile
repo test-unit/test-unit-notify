@@ -12,6 +12,7 @@ $LOAD_PATH.unshift(lib_dir.to_s)
 
 require 'test/unit/notify'
 
+require "yard"
 require 'rubygems'
 require "bundler/gem_helper"
 
@@ -24,7 +25,10 @@ helper.install
 spec = helper.gemspec
 version = spec.version
 
-task :docs do
+YARD::Rake::YardocTask.new do |task|
+end
+
+task :yard do
   doc_dir = base_dir + "doc"
   doc_screenshot_dir = doc_dir + "screenshot"
   mkdir_p(doc_screenshot_dir.to_s)

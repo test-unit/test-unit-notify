@@ -1,0 +1,5 @@
+--title test-unit-notify
+--readme README.textile
+--markup textile
+--output-dir doc/
+--charset utf-8
