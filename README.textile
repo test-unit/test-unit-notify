@@ -1,37 +1,43 @@
-= Test::Unit::Notify
+h1. Test::Unit::Notify
 
-http://rubyforge.org/projects/test-unit/
+"Homepage":http://rubyforge.org/projects/test-unit/
 
-== DESCRIPTION:
+h2. DESCRIPTION
 
 test-unit-notify - A test result notify extension for Test::Unit.
 
-== FEATURES/PROBLEMS:
+h2. FEATURES
 
 * This provides test result notification support.
 
-== INSTALL:
+h2. INSTALL
 
+<pre>
   % sudo gem install test-unit-notify
+</pre>
 
-== USAGE:
+h2. USAGE
 
+<pre>
   require 'test/unit/notify'
+</pre>
 
 It adds '--notify' to command line option.
 
+<pre>
   % ruby test/test_my_class.rb --notify
+</pre>
 
 See screenshot/notify-on-gnome.png for example on GNOME.
 
-== LICENSE:
+h2. LICENSE
 
 LGPLv2.1 or later.
 
 (Kouhei Sutou has a right to change the license including
 contributed patches.)
 
-== AUTHORS:
+h2. AUTHORS
 
 * Kouhei Sutou: program
 * Mayu & Co.: kinotan icons: http://cocooooooon.com/kinotan/
