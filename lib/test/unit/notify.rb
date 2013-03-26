@@ -17,8 +17,8 @@ require 'pathname'
 require 'erb'
 require 'test/unit/autorunner'
 
-module Test # :nodoc:
-  module Unit # :nodoc:
+module Test
+  module Unit
     AutoRunner.prepare do |auto_runner|
       Notify.setup_auto_runner(auto_runner)
     end
@@ -52,19 +52,20 @@ module Test # :nodoc:
           @@enable = false
         end
 
-        # Deprecated. Use Notify.enable or Notify.disable instead.
+        # @deprecated Use Notify.enable or Notify.disable instead.
         def enable=(enable)
           self.default = enable
         end
 
-        # Returns whether test result notification is
-        # enabled or not.
+        # @return [Boolean] return whether test result notification
+        #   is enabled or not.
         def enabled?
           @@enable = Notifier.available? if @@enable.nil?
           @@enable
         end
 
-        def setup_auto_runner(auto_runner, enable=nil) # :nodoc:
+        # @private
+        def setup_auto_runner(auto_runner, enable=nil)
           auto_runner.listeners.reject! do |listener|
             listener.is_a?(Notify::Notifier)
           end
@@ -73,7 +74,7 @@ module Test # :nodoc:
         end
       end
 
-      # :stopdoc:
+      # @private
       class NotifyCommand
         def available?
           paths.any? do |path|
@@ -96,6 +97,7 @@ module Test # :nodoc:
         end
       end
 
+      # @private
       class NotifySend < NotifyCommand
         include ERB::Util
 
@@ -121,6 +123,7 @@ module Test # :nodoc:
         end
       end
 
+      # @private
       class Growlnotify < NotifyCommand
         def initialize
           @command = "growlnotify"
@@ -153,31 +156,35 @@ module Test # :nodoc:
         end
       end
 
-      # :startdoc:
       class Notifier
         class << self
-          # Returns +true+ if test result notification is
-          # available.
+          # @return [Boolean] return @true@ if test result notification
+          #   is available.
           def available?
             not command.nil?
           end
 
-          # :stopdoc:
+          # @private
           def command
             @@command ||= commands.find {|command| command.available?}
           end
 
+          # @private
           def commands
             [NotifySend.new, Growlnotify.new]
           end
         end
 
         base_dir = Pathname(__FILE__).dirname.parent.parent.parent.expand_path
+        # @private
         ICON_DIR = base_dir + "data" + "icons"
+
+        # @private
         def initialize
           @theme = "kinotan"
         end
 
+        # @private
         def attach_to_mediator(mediator)
           mediator.add_listener(UI::TestRunnerMediator::STARTED,
                                 &method(:started))
@@ -185,10 +192,12 @@ module Test # :nodoc:
                                 &method(:finished))
         end
 
+        # @private
         def started(result)
           @result = result
         end
 
+        # @private
         def finished(elapsed_time)
           command = self.class.command
           return if command.nil?
