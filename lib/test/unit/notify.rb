@@ -40,14 +40,14 @@ module Test
         @@enable = nil
 
         # Enables test result notification by default. It
-        # can be disabled by --no-notify command line
+        # can be disabled by @--no-notify@ command line
         # option.
         def enable
           @@enable = true
         end
 
         # Disables test result notification by default. It
-        # can be disabled by --notify command line option.
+        # can be disabled by @--notify@ command line option.
         def disable
           @@enable = false
         end
