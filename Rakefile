@@ -13,18 +13,16 @@ $LOAD_PATH.unshift(lib_dir.to_s)
 require 'test/unit/notify'
 
 require 'rubygems'
-require 'hoe'
+require "bundler/gem_helper"
 
-version = Test::Unit::Notify::VERSION
-ENV["VERSION"] = version
-Hoe.spec('test-unit-notify') do
-  self.version = version
-  self.rubyforge_name = "test-unit"
-
-  developer('Kouhei Sutou', 'kou@clear-code.com')
-
-  extra_deps << ["test-unit", ">= 2.4.9"]
+helper = Bundler::GemHelper.new(base_dir)
+def helper.version_tag
+  version
 end
+
+helper.install
+spec = helper.gemspec
+version = spec.version
 
 task :docs do
   doc_dir = base_dir + "doc"
