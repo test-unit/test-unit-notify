@@ -52,7 +52,7 @@ module Test
           @@enable = false
         end
 
-        # @deprecated Use Notify.enable or Notify.disable instead.
+        # @deprecated Use {Notify.enable} or {Notify.disable} instead.
         def enable=(enable)
           self.default = enable
         end
