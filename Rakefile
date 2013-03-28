@@ -48,9 +48,4 @@ namespace :doc do
 end
 task :yard => "doc:screenshot"
 
-task :tag do
-  message = "Released Test::Unit::Notify #{version}!"
-  sh 'git', 'tag', '-a', version, '-m', message
-end
-
 # vim: syntax=Ruby
