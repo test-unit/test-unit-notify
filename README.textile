@@ -32,7 +32,7 @@ See screenshot/notify-on-gnome.png for example on GNOME.
 
 h2. LICENSE
 
-LGPLv2.1 or later.
+LGPLv2.1 or later. See doc/text/lgpl.txt for details.
 
 (Kouhei Sutou has a right to change the license including
 contributed patches.)
