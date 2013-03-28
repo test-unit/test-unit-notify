@@ -28,7 +28,8 @@ version = spec.version
 YARD::Rake::YardocTask.new do |task|
 end
 
-task :yard do
+namespace :doc do
+task :screenshot do
   doc_dir = base_dir + "doc"
   doc_screenshot_dir = doc_dir + "screenshot"
   mkdir_p(doc_screenshot_dir.to_s)
@@ -37,6 +38,8 @@ task :yard do
     cp(file.to_s, doc_screenshot_dir.to_s)
   end
 end
+end
+task :yard => "doc:screenshot"
 
 task :tag do
   message = "Released Test::Unit::Notify #{version}!"
