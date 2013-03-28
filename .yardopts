@@ -3,3 +3,4 @@
 --markup textile
 --output-dir doc/reference/en
 --charset utf-8
+--no-private
