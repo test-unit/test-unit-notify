@@ -27,10 +27,11 @@ Gem::Specification.new do |spec|
   spec.summary = summary
   spec.description = description
   spec.license = "LGPLv2.1 or later"
-  spec.files = ["README.textile", "History.txt", "Rakefile", "COPYING"]
+  spec.files = ["README.textile", "Rakefile", "COPYING"]
   spec.files += [".yardopts"]
   spec.files += Dir.glob("{data,screenshot}/**/*.png")
   spec.files += Dir.glob("lib/**/*.rb")
+  spec.files += Dir.glob("doc/text/*")
 
   spec.add_runtime_dependency("test-unit", ">= 2.4.9")
   spec.add_development_dependency("bundler")
