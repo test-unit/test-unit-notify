@@ -1,5 +1,13 @@
 h1. News
 
+h2(#1-0-0). 1.0.0 - 2013-03-28
+
+h3. Improvements
+
+* Stopped to register auto test run.
+* Added application name to notification.
+* Removed warnings.
+
 h2(#0-3-0). 0.3.0 - 2011-04-15
 
 h3. Improvements
