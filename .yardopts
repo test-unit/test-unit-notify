@@ -6,4 +6,5 @@
 --no-private
 lib/**/*.rb
 -
-History.txt COPYING
+COPYING
+doc/text/*.textile
