@@ -1,25 +1,25 @@
 h1. History
 
-h2(#0.3.0). 0.3.0 - 2011-04-15
+h2(#0-3-0). 0.3.0 - 2011-04-15
 
 h3. Improvements
 
 * Added kinotan for omission. [Mayu & Co.]
 * Added kinotan for error. [Mayu & Co.]
 
-h2(#0.2.1). 0.2.1 - 2011-02-10
+h2(#0-2-1). 0.2.1 - 2011-02-10
 
 h3. Improvements
 
 * Supported Ruby 1.9.
 
-h2(#0.2.0). 0.2.0 - 2011-02-10
+h2(#0-2-0). 0.2.0 - 2011-02-10
 
 h3. Improvements
 
 * Supported Mac OS X by growlnotify.
 
-h2(#0.1.0). 0.1.0 - 2010-11-25
+h2(#0-1-0). 0.1.0 - 2010-11-25
 
 h3. Improvements
 
@@ -29,6 +29,6 @@ h3. Changes
 
 * Changed license: Ruby's -> LGPLv2 or later.
 
-h2(#0.0.1). 0.0.1 - 2010-07-17
+h2(#0-0-1). 0.0.1 - 2010-07-17
 
 Birthday!
