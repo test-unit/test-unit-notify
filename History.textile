@@ -1,0 +1,34 @@
+h1. History
+
+h2(#0.3.0). 0.3.0 - 2011-04-15
+
+h3. Improvements
+
+* added kinotan for omission. [Mayu & Co.]
+* added kinotan for error. [Mayu & Co.]
+
+h2(#0.2.1). 0.2.1 - 2011-02-10
+
+h3. Improvements
+
+* supported Ruby 1.9.
+
+h2(#0.2.0). 0.2.0 - 2011-02-10
+
+h3. Improvements
+
+* supported Mac OS X by growlnotify.
+
+h2(#0.1.0). 0.1.0 - 2010-11-25
+
+h3. Improvements
+
+* added Test::Unit::Notify.enable=.
+
+h3. Changes
+
+* changed license: Ruby's -> LGPLv2 or later.
+
+h2(#0.0.1). 0.0.1 - 2010-07-17
+
+Birthday!
