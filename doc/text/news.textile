@@ -1,4 +1,13 @@
 h1. News
+h2(#1-0-1). 1.0.1 - 2013-04-02
+
+h3. Changes
+
+* Renamed COPYING to lgpl.
+
+h3. Fixes
+
+* Added missing files to the gem package.
 
 h2(#1-0-0). 1.0.0 - 2013-03-28
 
