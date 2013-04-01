@@ -6,5 +6,4 @@
 --no-private
 lib/**/*.rb
 -
-COPYING
-doc/text/*.textile
+doc/text/*.*
