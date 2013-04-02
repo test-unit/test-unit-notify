@@ -1,10 +1,10 @@
-h1. Test::Unit::Notify
+h1. test-unit-notify
 
 "Homepage":http://rubyforge.org/projects/test-unit/
 
 h2. DESCRIPTION
 
-test-unit-notify - A test result notify extension for Test::Unit.
+test-unit-notify - A test result notify extension for test-unit.
 
 h2. FEATURES
 
