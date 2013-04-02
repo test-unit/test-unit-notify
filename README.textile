@@ -13,19 +13,19 @@ h2. FEATURES
 h2. INSTALL
 
 <pre>
-  % sudo gem install test-unit-notify
+% sudo gem install test-unit-notify
 </pre>
 
 h2. USAGE
 
 <pre>
-  require 'test/unit/notify'
+require 'test/unit/notify'
 </pre>
 
 It adds '--notify' to command line option.
 
 <pre>
-  % ruby test/test_my_class.rb --notify
+% ruby test/test_my_class.rb --notify
 </pre>
 
 See screenshot/notify-on-gnome.png for example on GNOME.
