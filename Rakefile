@@ -1,6 +1,6 @@
 # -*- ruby -*-
 
-require 'pathname'
+require "pathname"
 
 base_dir = Pathname(__FILE__).dirname.expand_path
 test_unit_dir = (base_dir.parent + "test-unit").expand_path
@@ -10,11 +10,11 @@ lib_dir = base_dir + "lib"
 $LOAD_PATH.unshift(test_unit_lib_dir.to_s)
 $LOAD_PATH.unshift(lib_dir.to_s)
 
-require 'test/unit/notify'
+require "test/unit/notify"
 
 require "yard"
 require "packnga"
-require 'rubygems'
+require "rubygems"
 require "bundler/gem_helper"
 
 helper = Bundler::GemHelper.new(base_dir)
