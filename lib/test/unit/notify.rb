@@ -16,6 +16,7 @@
 require 'pathname'
 require 'erb'
 require 'test/unit/autorunner'
+require 'test/unit/notify/version'
 
 module Test
   module Unit
@@ -32,10 +33,6 @@ module Test
     end
 
     module Notify
-      # test-unit-notify version number formatted as
-      # "#\{MAJOR}.#\{MINOR}.#\{MICRO}".
-      VERSION = "1.0.2"
-
       class << self
         @@enable = nil
 

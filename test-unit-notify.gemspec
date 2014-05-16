@@ -1,6 +1,6 @@
 # -*- mode: ruby; coding: utf-8 -*-
 
-require "./lib/test/unit/notify"
+require "./lib/test/unit/notify/version"
 
 clean_white_space = lambda do |entry|
   entry.gsub(/(\A\n+|\n+\z)/, '') + "\n"
