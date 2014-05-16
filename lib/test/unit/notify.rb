@@ -13,10 +13,10 @@
 # You should have received a copy of the GNU Lesser General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require 'pathname'
-require 'erb'
-require 'test/unit/autorunner'
-require 'test/unit/notify/version'
+require "pathname"
+require "erb"
+require "test/unit/autorunner"
+require "test/unit/notify/version"
 
 module Test
   module Unit
