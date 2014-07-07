@@ -20,8 +20,7 @@ description = summary + features
 Gem::Specification.new do |spec|
   spec.name = "test-unit-notify"
   spec.version = version
-  spec.rubyforge_project = "test-unit"
-  spec.homepage = "http://test-unit.rubyforge.org/"
+  spec.homepage = "https://github.com/test-unit/test-unit-notify"
   spec.authors = ["Kouhei Sutou"]
   spec.email = ["kou@clear-code.com"]
   spec.summary = summary

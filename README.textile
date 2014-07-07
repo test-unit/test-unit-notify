@@ -1,6 +1,6 @@
 h1. test-unit-notify
 
-"Homepage":http://test-unit.rubyforge.org/#test-unit-notify
+"Homepage":https://github.com/test-unit/test-unit-notify
 
 h2. DESCRIPTION
 
