@@ -153,6 +153,30 @@ module Test
         end
       end
 
+      # @private
+      class GrowlnotifyForWindows < NotifyCommand
+        def initialize
+          @command = "growlnotify.exe"
+        end
+
+        URGENCIES = {
+          "critical" => 2,
+        }
+
+        URGENCIES.default = 0
+
+        def run(parameters)
+          priority = URGENCIES[parameters[:urgency]]
+          title    = parameters[:title]
+          message  = parameters[:message]
+          image    = parameters[:icon]
+          command_line = [@command, "/t:#{title}", "/p:#{priority}"]
+          command_line << "/i:#{image.to_s}" if image
+          command_line << message
+          system(*command_line)
+        end
+      end
+
       class Notifier
         class << self
           # @return [Boolean] return @true@ if test result notification
@@ -168,7 +192,7 @@ module Test
 
           # @private
           def commands
-            [NotifySend.new, Growlnotify.new]
+            [NotifySend.new, Growlnotify.new, GrowlnotifyForWindows.new]
           end
         end
 
