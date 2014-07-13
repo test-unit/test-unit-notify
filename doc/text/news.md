@@ -1,52 +1,52 @@
-h1. News
+# News
 
-h2(#1-0-1). 1.0.1 - 2013-04-02
+## 1.0.1 - 2013-04-02 (#version-1-0-1)
 
-h3. Changes
+### Changes
 
 * Renamed COPYING to lgpl.
 
-h3. Fixes
+### Fixes
 
 * Added missing files to the gem package.
 
-h2(#1-0-0). 1.0.0 - 2013-03-28
+## 1.0.0 - 2013-03-28 (#version-1-0-0)
 
-h3. Improvements
+### Improvements
 
 * Stopped to register auto test run.
 * Added application name to notification.
 * Removed warnings.
 
-h2(#0-3-0). 0.3.0 - 2011-04-15
+## 0.3.0 - 2011-04-15 (#version-0-3-0)
 
-h3. Improvements
+### Improvements
 
 * Added kinotan for omission. [Mayu & Co.]
 * Added kinotan for error. [Mayu & Co.]
 
-h2(#0-2-1). 0.2.1 - 2011-02-10
+## 0.2.1 - 2011-02-10 (#version-0-2-1)
 
-h3. Improvements
+### Improvements
 
 * Supported Ruby 1.9.
 
-h2(#0-2-0). 0.2.0 - 2011-02-10
+## 0.2.0 - 2011-02-10 (#version-0-2-0)
 
-h3. Improvements
+### Improvements
 
 * Supported Mac OS X by growlnotify.
 
-h2(#0-1-0). 0.1.0 - 2010-11-25
+## 0.1.0 - 2010-11-25 (#version-0-1-0)
 
-h3. Improvements
+### Improvements
 
 * Added Test::Unit::Notify.enable=.
 
-h3. Changes
+### Changes
 
 * Changed license: Ruby's -> LGPLv2 or later.
 
-h2(#0-0-1). 0.0.1 - 2010-07-17
+## 0.0.1 - 2010-07-17 (#version-0-0-1)
 
 Birthday!

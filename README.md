@@ -1,43 +1,37 @@
-h1. test-unit-notify
+# test-unit-notify
 
-"Homepage":https://github.com/test-unit/test-unit-notify
+[Homepage](https://github.com/test-unit/test-unit-notify)
 
-h2. DESCRIPTION
+## DESCRIPTION
 
 test-unit-notify - A test result notify extension for test-unit.
 
-h2. FEATURES
+## FEATURES
 
 * This provides test result notification support.
 
-h2. INSTALL
+## INSTALL
 
-<pre>
-% sudo gem install test-unit-notify
-</pre>
+    % sudo gem install test-unit-notify
 
-h2. USAGE
+## USAGE
 
-<pre>
-require 'test/unit/notify'
-</pre>
+    require 'test/unit/notify'
 
-It adds '--notify' to command line option.
+It adds `--notify` to command line option.
 
-<pre>
-% ruby test/test_my_class.rb --notify
-</pre>
+    % ruby test/test_my_class.rb --notify
 
 See screenshot/notify-on-gnome.png for example on GNOME.
 
-h2. LICENSE
+## LICENSE
 
 LGPLv2.1 or later. See doc/text/lgpl.txt for details.
 
 (Kouhei Sutou has a right to change the license including
 contributed patches.)
 
-h2. AUTHORS
+## AUTHORS
 
 * Kouhei Sutou: program
 * Mayu & Co.: kinotan icons: http://cocooooooon.com/kinotan/
