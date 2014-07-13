@@ -109,10 +109,12 @@ module Test
           message = h(parameters[:message])
           icon = parameters[:icon]
 
-          command_line = [@command,
-                          "--app-name", title,
-                          "--expire-time", expire_time.to_s,
-                          "--urgency", urgency]
+          command_line = [
+            @command,
+            "--app-name", title,
+            "--expire-time", expire_time.to_s,
+            "--urgency", urgency,
+          ]
           command_line.concat(["--icon", icon.to_s]) if icon
           command_line << title
           command_line << message
@@ -132,9 +134,11 @@ module Test
           message = parameters[:message]
           image = parameters[:icon]
 
-          command_line = [@command,
-                          "--priority", priority,
-                          "--message", message]
+          command_line = [
+            @command,
+            "--priority", priority,
+            "--message", message,
+          ]
           command_line.concat(["--image", image.to_s]) if image
           command_line << title
           system(*command_line)
@@ -223,9 +227,11 @@ module Test
           command = self.class.command
           return if command.nil?
 
-          title = "%s [%g%%] (%gs)" % [@result.status,
-                                       @result.pass_percentage,
-                                       elapsed_time]
+          title = "%s [%g%%] (%gs)" % [
+            @result.status,
+            @result.pass_percentage,
+            elapsed_time,
+          ]
           parameters = {
             :expire_time => 5,
             :icon => guess_suitable_icon,
