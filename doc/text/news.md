@@ -1,6 +1,6 @@
 # News
 
-## 1.0.1 - 2013-04-02 (#version-1-0-1)
+## 1.0.1 - 2013-04-02 {#version-1-0-1}
 
 ### Changes
 
@@ -10,7 +10,7 @@
 
 * Added missing files to the gem package.
 
-## 1.0.0 - 2013-03-28 (#version-1-0-0)
+## 1.0.0 - 2013-03-28 {#version-1-0-0}
 
 ### Improvements
 
@@ -18,26 +18,26 @@
 * Added application name to notification.
 * Removed warnings.
 
-## 0.3.0 - 2011-04-15 (#version-0-3-0)
+## 0.3.0 - 2011-04-15 {#version-0-3-0}
 
 ### Improvements
 
 * Added kinotan for omission. [Mayu & Co.]
 * Added kinotan for error. [Mayu & Co.]
 
-## 0.2.1 - 2011-02-10 (#version-0-2-1)
+## 0.2.1 - 2011-02-10 {#version-0-2-1}
 
 ### Improvements
 
 * Supported Ruby 1.9.
 
-## 0.2.0 - 2011-02-10 (#version-0-2-0)
+## 0.2.0 - 2011-02-10 {#version-0-2-0}
 
 ### Improvements
 
 * Supported Mac OS X by growlnotify.
 
-## 0.1.0 - 2010-11-25 (#version-0-1-0)
+## 0.1.0 - 2010-11-25 {#version-0-1-0}
 
 ### Improvements
 
@@ -47,6 +47,6 @@
 
 * Changed license: Ruby's -> LGPLv2 or later.
 
-## 0.0.1 - 2010-07-17 (#version-0-0-1)
+## 0.0.1 - 2010-07-17 {#version-0-0-1}
 
 Birthday!
