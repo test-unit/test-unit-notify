@@ -1,5 +1,17 @@
 # News
 
+## 1.0.2 - 2014-07-13 {#version-1-0-2}
+
+### Improvements
+
+* Supported Windows. You need to install
+  [Growl for Windows](http://www.growlforwindows.com/).
+  [GitHub#3] [Patch by Arikui]
+
+### Thanks
+
+* Arikui
+
 ## 1.0.1 - 2013-04-02 {#version-1-0-1}
 
 ### Changes
