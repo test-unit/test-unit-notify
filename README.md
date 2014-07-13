@@ -1,6 +1,6 @@
 # test-unit-notify
 
-[Homepage](https://github.com/test-unit/test-unit-notify)
+[Homepage](https://test-unit.github.io/#test-unit-notify)
 
 ## DESCRIPTION
 
