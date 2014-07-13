@@ -1,6 +1,6 @@
 --title test-unit-notify
---readme README.textile
---markup textile
+--readme README.md
+--markup markdown
 --output-dir doc/reference/en
 --charset utf-8
 --no-private
