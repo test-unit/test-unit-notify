@@ -191,7 +191,7 @@ module Test
 
         def run(parameters)
           title = parameters[:title]
-          message = h(parameters[:message])
+          message = parameters[:message]
 
           command_line = [
             @command,
