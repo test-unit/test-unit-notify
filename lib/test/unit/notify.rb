@@ -181,6 +181,25 @@ module Test
         end
       end
 
+      # @private
+      class TerminalNotifier < NotifyCommand
+        include ERB::Util
+
+        def initialize
+          @command = "terminal-notifier"
+        end
+
+        def run(parameters)
+          title = parameters[:title]
+          message = h(parameters[:message])
+
+          command_line = [@command,
+                          "-title", title,
+                          "-message", message]
+          system(*command_line)
+        end
+      end
+
       class Notifier
         class << self
           # @return [Boolean] return `true` if test result notification
@@ -196,7 +215,7 @@ module Test
 
           # @private
           def commands
-            [NotifySend.new, Growlnotify.new, GrowlnotifyForWindows.new]
+            [NotifySend.new, Growlnotify.new, GrowlnotifyForWindows.new, TerminalNotifier.new]
           end
         end
 
