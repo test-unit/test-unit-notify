@@ -1,4 +1,4 @@
-# Copyright (C) 2010-2013  Kouhei Sutou <kou@clear-code.com>
+# Copyright (C) 2010-2014  Kouhei Sutou <kou@clear-code.com>
 #
 # This library is free software: you can redistribute it and/or modify
 # it under the terms of the GNU Lesser General Public License as published by
@@ -193,9 +193,11 @@ module Test
           title = parameters[:title]
           message = h(parameters[:message])
 
-          command_line = [@command,
-                          "-title", title,
-                          "-message", message]
+          command_line = [
+            @command,
+            "-title", title,
+            "-message", message,
+          ]
           system(*command_line)
         end
       end
