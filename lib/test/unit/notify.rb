@@ -217,7 +217,12 @@ module Test
 
           # @private
           def commands
-            [NotifySend.new, Growlnotify.new, GrowlnotifyForWindows.new, TerminalNotifier.new]
+            [
+              NotifySend.new,
+              Growlnotify.new,
+              GrowlnotifyForWindows.new,
+              TerminalNotifier.new,
+            ]
           end
         end
 
