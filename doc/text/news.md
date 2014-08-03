@@ -1,5 +1,18 @@
 # News
 
+## 1.0.3 - 2014-08-03 {#version-1-0-3}
+
+### Improvements
+
+* Supported OS X native notification system via
+  [terminal-notifier](https://github.com/alloy/terminal-notifier).
+  It requires OS X 10.8 or later.
+  [GitHub#4][Patch by cosmo0920]
+
+### Thanks
+
+* cosmo0920
+
 ## 1.0.2 - 2014-07-13 {#version-1-0-2}
 
 ### Improvements
