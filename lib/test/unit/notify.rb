@@ -192,12 +192,14 @@ module Test
         def run(parameters)
           title = parameters[:title]
           message = parameters[:message]
+          icon = parameters[:icon]
 
           command_line = [
             @command,
             "-title", title,
             "-message", message,
           ]
+          command_line.concat(["-appIcon", icon.to_s]) if icon
           system(*command_line)
         end
       end
