@@ -1,5 +1,16 @@
 # News
 
+## 1.0.4 - 2014-10-13 {#version-1-0-4}
+
+### Improvements
+
+* terminal-notifier: Supported icon.
+  [GitHub#5][Patch by Yuichi NANSAI]
+
+### Thanks
+
+* Yuichi NANSAI
+
 ## 1.0.3 - 2014-08-03 {#version-1-0-3}
 
 ### Improvements
