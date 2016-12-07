@@ -34,4 +34,4 @@ contributed patches.)
 ## AUTHORS
 
 * Kouhei Sutou: program
-* Mayu & Co.: kinotan icons: http://cocooooooon.com/kinotan/
+* Mayu & Co.: kinotan icons
